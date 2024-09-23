@@ -11,10 +11,6 @@ public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long,Member> store = new HashMap<>();
     private static long sequence = 0L;
 
-    public int add(int a, int b){
-        return a + b;
-    }
-
 
     @Override
     public Member save(Member member1) {
@@ -24,7 +20,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findById(long id) {
+    public Optional<Member> findById(Long id) {
         return Optional.ofNullable(store.get(id));
     }
 
